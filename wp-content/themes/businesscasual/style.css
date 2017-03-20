@@ -1,0 +1,37 @@
+@charset "utf-8";
+/*
+Theme Name: Business Casual
+Theme URI: https://www.xtendify.com/en/product/94-Business_Casual_for_WordPress
+Author: Vikas Singhal (tB3)
+Author URI: http://twitter.com/Xtendify
+Description: Elegant and Casual theme for businesses.
+Version: 1.0
+
+ * Built on the Whiteboard Framework
+ * http://whiteboardframework.com
+ */
+
+/* Custom CSS */
+#content a { color: #777777}
+
+#content a:hover,
+#content a:focus {
+  color: #333333;
+  text-decoration: none;
+}
+
+.brand a:hover, .brand a:focus  {
+    color: #fff;
+}
+.widget-footer > ul ul { 
+    padding-left:0px;
+    list-style-type: none;
+}
+
+a {
+    color: #777777
+}
+a:hover, a:focus {
+    color: #333333;
+    text-decoration: none;
+}
