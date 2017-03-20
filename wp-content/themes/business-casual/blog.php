@@ -10,10 +10,10 @@
     <title>Blog - Business Casual Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="<?php bloginfo('template_directory'); ?>/css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="css/business-casual.css" rel="stylesheet">
+    <link href="<?php bloginfo('template_directory'); ?>/css/business-casual.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,19 +30,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Business Casual</a>
+                <a class="navbar-brand" href="<?php bloginfo('template_directory'); ?>/index.html">Business Casual</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="<?php bloginfo('template_directory'); ?>/index.html">Home</a>
                     </li>
-                    <li><a href="about.html">About</a>
+                    <li><a href="<?php bloginfo('template_directory'); ?>/about.html">About</a>
                     </li>
-                    <li><a href="blog.html">Blog</a>
+                    <li><a href="<?php bloginfo('template_directory'); ?>/blog.html">Blog</a>
                     </li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="<?php bloginfo('template_directory'); ?>/contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -62,7 +62,7 @@
                     <hr>
                 </div>
                 <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border img-full" src="img/slide-1.jpg" alt="">
+                    <img class="img-responsive img-border img-full" src="<?php bloginfo('template_directory'); ?>/img/slide-1.jpg" alt="">
                     <h2>Post Title
                         <br>
                         <small>October 13, 2013</small>
@@ -72,7 +72,7 @@
                     <hr>
                 </div>
                 <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border img-full" src="img/slide-2.jpg" alt="">
+                    <img class="img-responsive img-border img-full" src="<?php bloginfo('template_directory'); ?>/img/slide-2.jpg" alt="">
                     <h2>Post Title
                         <br>
                         <small>October 13, 2013</small>
@@ -82,7 +82,7 @@
                     <hr>
                 </div>
                 <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border img-full" src="img/slide-3.jpg" alt="">
+                    <img class="img-responsive img-border img-full" src="<?php bloginfo('template_directory'); ?>/img/slide-3.jpg" alt="">
                     <h2>Post Title
                         <br>
                         <small>October 13, 2013</small>
@@ -116,8 +116,8 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/js/jquery-1.10.2.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/js/bootstrap.js"></script>
 
 </body>
 
