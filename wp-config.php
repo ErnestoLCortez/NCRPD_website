@@ -18,7 +18,10 @@ if (isset($_SERVER["HTTP_X_FORWARDED_PROTO"]) && $_SERVER["HTTP_X_FORWARDED_PROT
  *
  * @package WordPress
  */
-
+ 
+/** Site URL */
+define('WP_HOME', getenv('WP_HOME'));
+define('WP_SITEURL',getenv('WP_SITEURL'));
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', getenv('DB_NAME'));
