@@ -11,7 +11,6 @@
 	 */
 	do_action( 'travelify_before_left_sidebar' );
 ?>
-
 <?php
 	/**
 	 * travelify_left_sidebar hook

@@ -262,10 +262,8 @@ blockquote cite {
 }
 /* Breadcrumb */
 .breadcrumb {
-	float: right;
-	text-align: right;
-	margin-top: 5px;
-	margin-bottom: 5px;
+	float: left !important;
+	text-align: left !important;
 	font-size: 12px;
 }
 .breadcrumb ul li {
@@ -513,15 +511,15 @@ a.more-link:hover {
 	margin-top: 15px;
 }
 .hgroup-wrap {
-	padding-top: 15px;
-	padding-bottom: 35px;
+	padding-top: 0px;
+	padding-bottom: 0px;
 }
 .hgroup-wrap a {
 	display: block;
 }
 #site-logo {
 	float: left;
-	margin-top: 32px;
+	margin-top: 12px;
 }
 #site-title {
 	font: 36px 'Ubuntu', sans-serif;
@@ -546,7 +544,7 @@ a.more-link:hover {
 }
 .hgroup-right {
 	float: right;
-	margin-top: 38px;
+	margin-top: 18px;
 }
 /* Social Profiles */
 .social-icons {
@@ -1768,7 +1766,7 @@ article {
 /* =WooCommerce
 -------------------------------------------------------------- */
 #breadcrumb {
-	padding: 40px 0 0 0;
+	padding: 13px 0 0 0;
 }
 
 #breadcrumb a {
