@@ -18,14 +18,16 @@ Once your instance is created, you will want to ensure that the database is acce
 - Open up the EC2 Management Console
 - Go to Security groups, choose the correct security group
 - Your Inbound table should look like this:
+
 	|Type | Protocol | Port Range | Source | Description|
-    |-----|:--------:|:----------:|:------:|-----------:|
+	|-----|:--------:|:----------:|:------:|-----------:|
 	|MYSQL/Aurora | TCP | 3306 | 0.0.0.0/0 | |
 	|MYSQL/Aurora | TCP | 3306 | ::/0	  | |
 
 - Your outbound table should look like this:
+
 	|Type | Protocol | Port Range | Destination | Description|
-    |-----|:--------:|:----------:|:-----------:|-----------:|
+	|-----|:--------:|:----------:|:-----------:|-----------:|
 	|All traffic | All | All | 0.0.0.0/0 | |
 
 ### In cloud 9, within your wordpress site, change the wp-config file to:
