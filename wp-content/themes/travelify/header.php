@@ -61,6 +61,7 @@
 				do_action( 'travelify_header' );
 			?>
 		</header>
+			
 		<?php
 			/**
 			 * travelify_after_header hook
@@ -74,4 +75,5 @@
 			 */
 			do_action( 'travelify_before_main' );
 		?>
+
 		<div id="main" class="container clearfix">

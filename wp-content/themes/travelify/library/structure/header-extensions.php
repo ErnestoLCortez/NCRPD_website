@@ -145,7 +145,7 @@ function travelify_headerdetails() {
    		}
    		}
 
-		else {
+		/*else {
 			if( ( '' != travelify_header_title() ) || function_exists( 'bcn_display_list' ) ) {
 		?>
 			<div class="page-title-wrap">
@@ -159,7 +159,7 @@ function travelify_headerdetails() {
 	    	</div>
 	   <?php
 	   	}
-		}
+		}*/
 }
 
 /****************************************************************************************/

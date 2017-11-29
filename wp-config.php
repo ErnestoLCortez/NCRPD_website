@@ -20,28 +20,22 @@ if (isset($_SERVER["HTTP_X_FORWARDED_PROTO"]) && $_SERVER["HTTP_X_FORWARDED_PROT
  */
  
 /** Site URL */
-define('WP_HOME', getenv('WP_HOME'));
-define('WP_SITEURL',getenv('WP_SITEURL'));
-echo getenv('WP_SITEURL');
+//define('WP_HOME', getenv('WP_HOME'));
+//define('WP_SITEURL',getenv('WP_SITEURL'));
+//echo getenv('WP_SITEURL');
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', getenv('DB_NAME'));
-
 /** MySQL database username */
 define('DB_USER', getenv('DB_USER'));
-
 /** MySQL database password */
 define('DB_PASSWORD', getenv('DB_PASSWORD'));
-
 /** MySQL hostname */
 define('DB_HOST', getenv('DB_HOST'));
-
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
-
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
-
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -60,8 +54,8 @@ define('SECURE_AUTH_SALT', 'put your unique phrase here');
 define('LOGGED_IN_SALT',   'put your unique phrase here');
 define('NONCE_SALT',       'put your unique phrase here');
 
-/**#@-*/
 
+/**#@-*/
 /**
  * WordPress Database Table prefix.
  *
@@ -69,7 +63,6 @@ define('NONCE_SALT',       'put your unique phrase here');
  * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix  = 'wp_';
-
 /**
  * For developers: WordPress debugging mode.
  *
@@ -85,12 +78,9 @@ $table_prefix  = 'wp_';
 define('WP_DEBUG', false);
 $_SERVER["HTTP_HOST"] = $_SERVER["SERVER_NAME"];
 $_SERVER["HTTP_HOST"] = $_SERVER["SERVER_NAME"];
-
 /* That's all, stop editing! Happy blogging. */
-
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
-
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

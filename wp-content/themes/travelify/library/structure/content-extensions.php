@@ -14,6 +14,19 @@ function travelify_content() {
 	global $post;
 	global $travelify_theme_options_settings;
 	$options = $travelify_theme_options_settings;
+	if( ( '' != travelify_header_title() ) || function_exists( 'bcn_display_list' ) ) {
+		?>
+			<div class="page-title-wrap">
+	    		<div class="container clearfix">
+	    			<?php
+		    		if( function_exists( 'travelify_breadcrumb' ) )
+						travelify_breadcrumb();
+					?>
+				   <h3 class="page-title"><?php echo travelify_header_title(); ?></h3><!-- .page-title -->
+				</div>
+	    	</div>
+	   <?php
+	   	}
 	if( $post ) {
 		$layout = get_post_meta( $post->ID, 'travelify_sidebarlayout', true );
 	}

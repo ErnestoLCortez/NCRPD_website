@@ -110,5 +110,4 @@ if ( ! function_exists( 'travelify_setup' ) ):
 		add_editor_style();
 	}
 endif; // travelify_setup
-
 ?>
