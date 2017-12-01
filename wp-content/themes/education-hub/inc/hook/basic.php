@@ -136,7 +136,7 @@ if ( ! function_exists( 'education_hub_content_more_link' ) ) :
 
 		$read_more_text = education_hub_get_option( 'read_more_text' );
 		if ( ! empty( $read_more_text ) ) {
-			$more_link = str_replace( $more_link_text, $read_more_text, $more_link );
+			$more_link = str_replace( $more_link_text, esc_html( $read_more_text ), $more_link );
 		}
 		return $more_link;
 

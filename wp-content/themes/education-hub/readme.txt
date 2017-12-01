@@ -1,9 +1,9 @@
 === Education Hub ===
 
 Contributors: wenthemes
-Requires at least: 4.5
-Tested up to: 4.7
-Stable tag: 1.9.4
+Requires at least: 4.7
+Tested up to: 4.9
+Stable tag: 1.9.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ A clean and elegant WordPress education theme with simplistic but unique look an
 
 == Description ==
 
-Education Hub is a clean and elegant WordPress education theme with simplistic but unique look and feel. This theme is best suited for college, school, university and other educational websites. But this theme is not binded to be fit for educational websites only. This is also flexible enough to be used for business and corporate websites. Theme is highly customizable with layout settings and several other theme options which can be customized by using Theme Options panel based on powerful Customizer API. Education Hub helps you to easily and intuitively create professional and appealing educational websites. Official Support Forum: http://themepalace.com/support-forum/ Full Demo: http://wenthemes.com/theme-demos/?demo=education-hub
+Education Hub is a clean and elegant WordPress education theme with simplistic but unique look and feel. This theme is best suited for college, school, university and other educational websites. But this theme is not binded to be fit for educational websites only. This is also flexible enough to be used for business and corporate websites. Theme is highly customizable with layout settings and several other theme options which can be customized by using Theme Options panel based on powerful Customizer API. Education Hub helps you to easily and intuitively create professional and appealing educational websites. Official Support Forum: https://themepalace.com/support-forum/ Full Demo: https://wenthemes.com/theme-demos/?demo=education-hub
 
 == Installation ==
 
@@ -20,6 +20,14 @@ Education Hub is a clean and elegant WordPress education theme with simplistic b
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.9.6 - Nov 24 2017 =
+* WP 4.9 compatibility
+* Minor bug fixes
+
+= 1.9.5 - Aug 10 2017 =
+* WP 4.8 compatibility
+* Minor bug fixes
 
 = 1.9.4 - Dec 26 2016 =
 * Update Font Awesome

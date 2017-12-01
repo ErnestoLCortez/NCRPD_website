@@ -53,7 +53,7 @@ function education_hub_customize_register( $wp_customize ) {
 			array(
 				'title'    => esc_html__( 'Education Hub Pro', 'education-hub' ),
 				'pro_text' => esc_html__( 'Buy Pro', 'education-hub' ),
-				'pro_url'  => 'http://themepalace.com/downloads/education-hub-pro/',
+				'pro_url'  => 'https://themepalace.com/downloads/education-hub-pro/',
 				'priority' => 1,
 			)
 		)

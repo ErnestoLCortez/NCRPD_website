@@ -29,8 +29,8 @@ if ( ! function_exists( 'education_hub_get_home_news_block_content' ) ) :
 			'no_found_rows'  => true,
 			'post_type'      => 'post',
 		);
-		if ( absint( $home_news_category ) > 0  ) {
-		  $qargs['category'] = absint( $home_news_category );
+		if ( absint( $home_news_category ) > 0 ) {
+		  $qargs['cat'] = absint( $home_news_category );
 		}
 
 		$all_posts = get_posts( $qargs );
@@ -69,7 +69,10 @@ if ( ! function_exists( 'education_hub_get_home_news_block_content' ) ) :
 		  					 ?>
 	  					</div>
 	  					<?php if ( absint( $home_news_excerpt_length ) > 0 ): ?>
-					  		<p><?php echo education_hub_the_excerpt( absint( $home_news_excerpt_length ), $post ); ?></p>
+	  						<?php
+	  						$excerpt = education_hub_the_excerpt( absint( $home_news_excerpt_length ), $post );
+	  						echo wp_kses_post( wpautop( $excerpt ) );
+	  						?>
 	  					<?php endif ?>
 	  					<?php if ( ! empty( $home_news_read_more_text ) ): ?>
 					  		<a href="<?php the_permalink(); ?>" class="button"><?php echo esc_html( $home_news_read_more_text ); ?></a>
@@ -116,8 +119,8 @@ if ( ! function_exists( 'education_hub_get_home_events_block_content' ) ) :
 			'no_found_rows'  => true,
 			'post_type'      => 'post',
 		);
-		if ( absint( $home_events_category ) > 0  ) {
-		  $qargs['category'] = absint( $home_events_category );
+		if ( absint( $home_events_category ) > 0 ) {
+		  $qargs['cat'] = absint( $home_events_category );
 		}
 
 		$all_posts = get_posts( $qargs );
@@ -137,7 +140,10 @@ if ( ! function_exists( 'education_hub_get_home_events_block_content' ) ) :
 				  	<?php endif ?>
 			  		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
   					<?php if ( absint( $home_events_excerpt_length ) > 0 ): ?>
-				  		<p><?php echo education_hub_the_excerpt( absint( $home_events_excerpt_length ), $post ); ?></p>
+  						<?php
+  						$excerpt = education_hub_the_excerpt( absint( $home_events_excerpt_length ), $post );
+  						echo wp_kses_post( wpautop( $excerpt ) );
+  						?>
   					<?php endif ?>
 			  	</div> <!-- .event-post -->
 
