@@ -133,10 +133,7 @@ if ( ! function_exists( 'education_hub_render_featured_content' ) ) :
 						<?php endif; ?>
 						<div class="entry-content">
 							<div>
-								<?php
-								$excerpt_content = wp_kses_post( $content['excerpt'] );
-								echo wp_kses_post( wpautop( $excerpt_content ) );
-								?>
+								<?php echo wp_kses_post( wpautop( $content['excerpt'] ) ); ?>
 							</div>
 						</div>
 					</article>

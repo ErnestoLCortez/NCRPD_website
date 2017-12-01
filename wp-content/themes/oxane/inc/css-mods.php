@@ -5,7 +5,9 @@
 
 function oxane_custom_css_mods() {
 
-	echo "<style id='custom-css-mods'>";
+
+
+    echo "<style id='custom-css-mods'>";
 	
 	//If Highlighting Nav active item is disabled
 	if ( get_theme_mod('oxane_disable_active_nav') ) :
@@ -59,14 +61,15 @@ function oxane_custom_css_mods() {
 	if ( get_theme_mod('oxane_body_font','Open Sans') ) :
 		echo "body { font-family: ".esc_html(get_theme_mod('oxane_body_font'))."; }";
 	endif;
-	
-	if ( get_theme_mod('oxane_site_titlecolor') ) :
-		echo ".site-title a { color: ".esc_html(get_theme_mod('oxane_site_titlecolor', '#000'))."; }";
+
+
+	if ( get_header_textcolor() ) :
+		echo "#masthead h1.site-title a { color: #".get_header_textcolor()."; }";
 	endif;
 	
 	
-	if ( get_theme_mod('oxane_header_desccolor','#000') ) :
-		echo ".site-description { color: ".esc_html(get_theme_mod('oxane_header_desccolor','#000'))."; }";
+	if ( get_theme_mod('oxane_header_desccolor','#000000') ) :
+		echo "#masthead h2.site-description { color: ".esc_html(get_theme_mod('oxane_header_desccolor','#000'))."; }";
 	endif;
 	
 	if ( get_theme_mod('oxane_custom_css') ) :
@@ -82,6 +85,35 @@ function oxane_custom_css_mods() {
 		$val = esc_html(get_theme_mod('oxane_logo_resize'))/100;
 		echo "#masthead #site-logo img { transform: scale(".$val."); -webkit-transform: scale(".$val."); -moz-transform: scale(".$val."); -ms-transform: scale(".$val."); }";
 		endif;
+
+    if(!is_home() && is_front_page()):
+        if( get_theme_mod('oxane_page_title', true)):
+            echo "#primary-mono .entry-header { display:none; }";
+        endif;
+    endif;
+
+    if (!is_home() && is_front_page()) :
+        if ( get_theme_mod('oxane_content_font_size') ) :
+            $size = (get_theme_mod('oxane_content_font_size'));
+            echo "#primary-mono .entry-content { font-size:".$size.";}";
+        endif;
+    endif;
+
+    if (get_theme_mod('oxane_hero_background_image') != '') :
+        $image = get_theme_mod('oxane_hero_background_image');
+        echo "#hero {
+                    	background-image: url('" . $image . "');
+                        background-size: cover;
+                }";
+    endif;
+
+    if (get_theme_mod('oxane_hero_background_image')) :
+        $image1 = get_theme_mod('oxane_hero2_background_image');
+        echo "#hero2 {
+                    background-image: url('" . $image1 . "');
+                    background-size: cover;
+                }";
+    endif;	
 
 	echo "</style>";
 }

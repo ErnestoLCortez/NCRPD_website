@@ -5,7 +5,7 @@
 * Plugin URI: http://www.senff.com/plugins/sticky-anything-wp
 * Requires at least: 3.6
 * Tested up to: 4.9
-* Stable tag: 2.1
+* Stable tag: 2.1.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,6 +134,9 @@ If the customization is fairly minor, I can probably help out right away. Howeve
 
 ## Changelog
 
+### 2.1.1
+* Fixed minification bug
+
 ### 2.1
 * Sticky element has specific classes to target sticky/non-sticky state: ".element-is-sticky" and ".element-is-not-sticky"
 
@@ -194,6 +197,9 @@ If the customization is fairly minor, I can probably help out right away. Howeve
 
 
 ## Upgrade Notice 
+
+## 2.1.1
+* Bug fixes
 
 ## 2.1 
 * Functionality for targeting sticky/non-sticky classnames added

@@ -67,27 +67,16 @@ if ( ! class_exists( 'Education_Hub_Social_Widget' ) ) :
 				echo $args['before_title'] . $title . $args['after_title'];
 			}
 
-			$nav_menu_locations = get_nav_menu_locations();
-			$menu_id = 0;
-			if ( isset( $nav_menu_locations['social'] ) && absint( $nav_menu_locations['social'] ) > 0 ) {
-				$menu_id = absint( $nav_menu_locations['social'] );
+			if ( has_nav_menu( 'social' ) ) {
+				wp_nav_menu( array(
+					'theme_location' => 'social',
+					'container'      => false,
+					'depth'          => 1,
+					'link_before'    => '<span class="screen-reader-text">',
+					'link_after'     => '</span>',
+				) );
 			}
-			if ( $menu_id > 0 ) {
 
-				$menu_items = wp_get_nav_menu_items( $menu_id );
-
-				if ( ! empty( $menu_items ) ) {
-					echo '<ul class="size-medium">';
-					foreach ( $menu_items as $m_key => $m ) {
-						echo '<li>';
-						echo '<a href="' . esc_url( $m->url ) . '" target="_blank">';
-						echo '<span class="title screen-reader-text">' . esc_attr( $m->title ) . '</span>';
-						echo '</a>';
-						echo '</li>';
-					}
-					echo '</ul>';
-				}
-			}
 			echo $args['after_widget'];
 
 		}
@@ -132,17 +121,17 @@ if ( ! class_exists( 'Education_Hub_Social_Widget' ) ) :
 				$is_menu_set = true;
 			}
 			?>
-		  <p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'education-hub' ); ?></label>
-	        <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-		  </p>
+			<p>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'education-hub' ); ?></label>
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+			</p>
 
-		<?php if ( true !== $is_menu_set ) : ?>
-        <p>
-			<?php echo esc_html__( 'Social menu is not set. Please create menu and assign it to Social Menu.', 'education-hub' ); ?>
-        </p>
-        <?php endif; ?>
-		<?php
+			<?php if ( true !== $is_menu_set ) : ?>
+				<p>
+					<?php echo esc_html__( 'Social menu is not set. Please create menu and assign it to Social Menu.', 'education-hub' ); ?>
+				</p>
+			<?php endif; ?>
+			<?php
 		}
 	}
 

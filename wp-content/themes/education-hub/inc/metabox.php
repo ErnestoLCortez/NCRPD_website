@@ -130,9 +130,8 @@ if ( ! function_exists( 'education_hub_save_theme_settings_meta' ) ) :
 			return;
 		}
 
-
 		// Check permission.
-		if ( 'page' === $_POST['post_type'] ) {
+		if ( isset( $_POST['post_type'] ) && 'page' === $_POST['post_type'] ) {
 			if ( ! current_user_can( 'edit_page', $post_id ) ) {
 				return;
 			}
@@ -140,51 +139,55 @@ if ( ! function_exists( 'education_hub_save_theme_settings_meta' ) ) :
 			return;
 		}
 
-		$raw_value = wp_unslash( $_POST['theme_settings'] );
+		if ( isset( $_POST['theme_settings'] ) && is_array( $_POST['theme_settings'] ) ) {
 
-		if ( ! array_filter( $raw_value ) ) {
+			$raw_value = wp_unslash( $_POST['theme_settings'] );
 
-			// No value.
-			delete_post_meta( $post_id, 'theme_settings' );
+			if ( ! array_filter( $raw_value ) ) {
 
-		} else {
-			$meta_fields = array(
-				'post_layout' => array(
-					'type' => 'select',
-					),
-				'single_image' => array(
-					'type' => 'select',
-					),
-				'single_image_alignment' => array(
-					'type' => 'select',
-					),
-				);
+				// No value.
+				delete_post_meta( $post_id, 'theme_settings' );
 
-			$sanitized_values = array();
+			} else {
 
-			foreach ( $raw_value as $mk => $mv ) {
+				$meta_fields = array(
+					'post_layout' => array(
+						'type' => 'select',
+						),
+					'single_image' => array(
+						'type' => 'select',
+						),
+					'single_image_alignment' => array(
+						'type' => 'select',
+						),
+					);
 
-				if ( isset( $meta_fields[ $mk ]['type'] ) ) {
-					switch ( $meta_fields[ $mk ]['type'] ) {
-						case 'select':
-							$sanitized_values[ $mk ] = sanitize_key( $mv );
-							break;
-						case 'checkbox':
-							$sanitized_values[ $mk ] = absint( $mv ) > 0 ? 1 : 0;
-							break;
-						default:
-							$sanitized_values[ $mk ] = sanitize_text_field( $mv );
-							break;
-					}
-				} // End if.
+				$sanitized_values = array();
 
+				foreach ( $raw_value as $mk => $mv ) {
+
+					if ( isset( $meta_fields[ $mk ]['type'] ) ) {
+						switch ( $meta_fields[ $mk ]['type'] ) {
+							case 'select':
+								$sanitized_values[ $mk ] = sanitize_key( $mv );
+								break;
+							case 'checkbox':
+								$sanitized_values[ $mk ] = absint( $mv ) > 0 ? 1 : 0;
+								break;
+							default:
+								$sanitized_values[ $mk ] = sanitize_text_field( $mv );
+								break;
+						}
+					} // End if.
+
+				}
+
+				update_post_meta( $post_id, 'theme_settings', $sanitized_values );
 			}
-			update_post_meta( $post_id, 'theme_settings', $sanitized_values );
-
-		}
+		} // End if theme settings.
 
 	}
 
 endif;
 
-add_action( 'save_post', 'education_hub_save_theme_settings_meta', 10, 3 );
+add_action( 'save_post', 'education_hub_save_theme_settings_meta', 10, 2 );

@@ -3,7 +3,7 @@
 /*
 Plugin Name: RT Slider
 Description: A Very Simple & Easy Slider Plugin, which helps you create sliders from Customizer, if your Theme Supports it. Originally Designed to Work with Rohitink.com & Inkhive.com Themes. 
-Version: 1.0.5
+Version: 1.0.6
 Author: Rohit Tripathi
 Author URI: http://rohitink.com
 License: GPLv3
@@ -493,8 +493,8 @@ class rt_slider {
 			|| ( get_theme_mod('rtslider_enable_front') && is_front_page() )
 			|| ( get_theme_mod('rtslider_enable_posts') && is_single() ) 
 			|| ( get_theme_mod('rtslider_enable_pages') && is_page() )
-			|| ( is_page(get_theme_mod('rtslider_enable_page1', -1)) && is_page() )
-			|| ( is_page(get_theme_mod('rtslider_enable_page2', -1)) && is_page() ) //Extra check by is_page() added on purpose.		
+			|| ( is_page(get_theme_mod('rtslider_enable_page1', 0)) && is_page() && get_theme_mod('rtslider_enable_page1') != "0" )
+			|| ( is_page(get_theme_mod('rtslider_enable_page2', 0)) && is_page() && get_theme_mod('rtslider_enable_page2') != "0") //Extra check by is_page() added on purpose.		
 		)
 		return true;
 	}
